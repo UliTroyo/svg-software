@@ -1,2 +1,57 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+  import { useMachine } from "@xstate/svelte";
+  import { createMachine } from "xstate";
+  import Canvas from "$lib/Canvas.svelte";
+  import Toolbar from "$lib/Toolbar.svelte";
+
+  const toolMachine = createMachine({
+    id: "tool",
+    initial: "selection",
+    states: {
+      selection: {},
+      point: {},
+      path: {},
+      circle: {},
+      rectangle: {},
+    },
+    predictableActionArguments: true,
+  });
+
+  const { state, send } = useMachine(toolMachine);
+</script>
+
+<svelte:head>
+  <title>SVG Software</title>
+</svelte:head>
+
+<Toolbar />
+<Canvas />
+<output>{$state.value}</output>
+
+<style>
+  :global(*) {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  :global(body) {
+    background-color: blueviolet;
+    display: grid;
+    min-height: 100vh;
+    place-content: center;
+  }
+  :global(#canvas) {
+    background-color: gold;
+    height: 90vmin;
+    padding: 1em;
+    width: 90vmin;
+  }
+  output {
+    bottom: 0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+    padding: 0.5em;
+    position: absolute;
+  }
+</style>
