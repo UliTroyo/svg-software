@@ -1,8 +1,12 @@
+<script lang="ts">
+  import { toolState } from "$lib/toolState";
+  import { tools } from "$lib/tools";
+</script>
+
 <div id="toolbar">
-  <button>Tool</button>
-  <button>Tool</button>
-  <button>Tool</button>
-  <button>Tool</button>
+  {#each tools as tool}
+    <button on:click={() => toolState.send(tool.toUpperCase())}>{tool}</button>
+  {/each}
 </div>
 
 <style>

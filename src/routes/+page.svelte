@@ -1,23 +1,7 @@
 <script lang="ts">
-  import { useMachine } from "@xstate/svelte";
-  import { createMachine } from "xstate";
+  import { toolState } from "$lib/toolState";
   import Canvas from "$lib/Canvas.svelte";
   import Toolbar from "$lib/Toolbar.svelte";
-
-  const toolMachine = createMachine({
-    id: "tool",
-    initial: "selection",
-    states: {
-      selection: {},
-      point: {},
-      path: {},
-      circle: {},
-      rectangle: {},
-    },
-    predictableActionArguments: true,
-  });
-
-  const { state, send } = useMachine(toolMachine);
 </script>
 
 <svelte:head>
@@ -26,7 +10,7 @@
 
 <Toolbar />
 <Canvas />
-<output>{$state.value}</output>
+<output>{$toolState.value}</output>
 
 <style>
   :global(*) {
