@@ -19,15 +19,8 @@
     padding: 0;
   }
   :global(body) {
-    background-color: blueviolet;
-    display: grid;
+    background-color: blue;
     min-height: 100vh;
-    place-content: center;
-  }
-  :global(#canvas) {
-    background-color: gold;
-    height: 90vmin;
-    width: 90vmin;
   }
   output {
     bottom: 0;
@@ -36,5 +29,8 @@
     font-size: 0.8em;
     padding: 0.5em;
     position: absolute;
+  }
+  :global([data-shadow]) {
+    filter: drop-shadow(3px 3px 5px #0004);
   }
 </style>

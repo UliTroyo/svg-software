@@ -3,7 +3,7 @@
   import { tools } from "$lib/tools";
 </script>
 
-<div id="toolbar">
+<div id="toolbar" data-shadow>
   {#each tools as tool}
     <button on:click={() => toolState.send(tool.toUpperCase())}>{tool}</button>
   {/each}
@@ -19,6 +19,7 @@
   }
   :global(#toolbar) {
     background-color: gold;
+    border: 1px solid orange;
     display: flex;
     flex-direction: column;
     gap: 0.3em;
@@ -26,5 +27,6 @@
     margin: 0.5em;
     padding: 0.5em;
     position: absolute;
+    z-index: 2;
   }
 </style>
