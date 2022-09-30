@@ -9,6 +9,10 @@
   {/each}
 </div>
 
+<!-- 
+  @component
+  **Toolbar**: The toolbar from which one selects tools.
+-->
 <style>
   button {
     padding: 0.3em 0.5em;

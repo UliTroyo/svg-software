@@ -10,7 +10,7 @@
 
 <Toolbar />
 <Canvas />
-<output>{$toolState.value}</output>
+<output>Current tool: {$toolState.value}</output>
 
 <style>
   :global(*) {
@@ -27,7 +27,6 @@
   :global(#canvas) {
     background-color: gold;
     height: 90vmin;
-    padding: 1em;
     width: 90vmin;
   }
   output {
