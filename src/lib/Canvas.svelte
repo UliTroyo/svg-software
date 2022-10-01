@@ -44,7 +44,9 @@
       width={width * 10}
       viewBox="0 0 {height * 10} {width * 10}"
     >
-      <Guides />
+      {#if guides}
+        <Guides />
+      {/if}
     </svg>
   </div>
 </div>
