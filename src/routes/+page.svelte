@@ -1,6 +1,7 @@
 <script lang="ts">
   import { toolState } from "$lib/toolState";
   import Canvas from "$lib/Canvas.svelte";
+  import Menubar from "$lib/Menubar.svelte";
   import Toolbar from "$lib/Toolbar.svelte";
 </script>
 
@@ -8,9 +9,12 @@
   <title>SVG Software</title>
 </svelte:head>
 
-<Toolbar />
-<Canvas />
-<output>Current tool: {$toolState.value}</output>
+<main>
+  <Menubar />
+  <Toolbar />
+  <Canvas />
+  <output>Current tool: {$toolState.value}</output>
+</main>
 
 <style>
   :global(*) {
