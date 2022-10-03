@@ -7,3 +7,9 @@
 <div id="menubar">
   <button on:click={fileMenu}>File</button>
 </div>
+
+<style>
+  #menubar {
+    background-color: black;
+  }
+</style>
