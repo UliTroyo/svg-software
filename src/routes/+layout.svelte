@@ -4,7 +4,7 @@
   import Menubar from "$lib/Menubar.svelte";
   import Toolbar from "$lib/Toolbar.svelte";
 
-  let currentSVG = true;
+  let currentSVG = false;
 </script>
 
 <svelte:head>
@@ -27,7 +27,7 @@
     padding: 0;
   }
   body {
-    background-color: blueviolet;
+    background-color: blue;
     min-height: 100vh;
   }
   [data-shadow] {
